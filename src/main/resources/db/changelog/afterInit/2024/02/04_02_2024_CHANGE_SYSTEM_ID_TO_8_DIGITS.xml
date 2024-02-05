@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="delete every unused value in tb_pickups" author="author_name">
+        <sql>DELETE FROM tb_pickups WHERE LENGTH(liquibase_trash_types_import_system_id) = 6</sql>
+    </changeSet>
+
+    <changeSet id="delete every unused value in tb_trash_types" author="author_name">
+        <sql>DELETE FROM tb_trash_types WHERE LENGTH(system_id) = 6</sql>
+    </changeSet>
+
+    <changeSet id="delete every unused value in tb_towns" author="author_name">
+        <sql>DELETE FROM tb_towns WHERE LENGTH(system_id) = 6</sql>
+    </changeSet>
+
+    <changeSet id="delete every unused value in tb_streets" author="author_name">
+        <sql>DELETE FROM tb_streets WHERE LENGTH(system_id) = 6</sql>
+    </changeSet>
+
+    <changeSet id="delete every unused value in tb_pickup_districts" author="author_name">
+        <sql>DELETE FROM tb_pickup_districts WHERE LENGTH(system_id) = 6</sql>
+    </changeSet>
+
+    <changeSet id="delete every unused value in tb_cities" author="author_name">
+        <sql>DELETE FROM tb_cities WHERE LENGTH(system_id) = 6</sql>
+    </changeSet>
+
+    <changeSet id="delete every unused value in tb_districts" author="author_name">
+        <sql>DELETE FROM tb_districts WHERE LENGTH(system_id) = 6</sql>
+    </changeSet>
+
+    <changeSet id="delete every unused value in tb_states" author="author_name">
+        <sql>DELETE FROM tb_states WHERE LENGTH(system_id) = 6</sql>
+    </changeSet>
+
+</databaseChangeLog>
