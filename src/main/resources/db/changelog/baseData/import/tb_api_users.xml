@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="add base admin users for api requests" runOnChange="true" author="fas">
+        <loadUpdateData tableName="tb_api_users"
+                  primaryKey="username"
+                  separator=","
+                  file="db/changelog/baseData/import/tb_api_users.csv">
+            <column name="username" type="STRING"/>
+            <column name="password" type="STRING"/>
+        </loadUpdateData>
+    </changeSet>
+
+</databaseChangeLog>
