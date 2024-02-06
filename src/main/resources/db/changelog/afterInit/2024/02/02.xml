@@ -4,7 +4,4 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include file="/db/changelog/afterInit/2024/02/04_02_2024_CHANGE_STREETS_AND_TOWNS_CALC_BEHAVIOUR.xml"/>
-    <include file="/db/changelog/afterInit/2024/02/04_02_2024_CHANGE_SYSTEM_ID_TO_8_DIGITS.xml"/>
-
 </databaseChangeLog>
