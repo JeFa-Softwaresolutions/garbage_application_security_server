@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create tb_suggestion_users" author="fas">
+        <createTable tableName="tb_suggestion_users">
+            <column name="autoid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="username" type="VARCHAR(32)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="safety_answer_1" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="safety_answer_2" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="safety_answer_3" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="safety_question_1_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestion_users_safety_questions_1" referencedTableName="tb_safety_questions" referencedColumnNames="autoid"/>
+            </column>
+            <column name="safety_question_2_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestion_users_safety_questions_2" referencedTableName="tb_safety_questions" referencedColumnNames="autoid"/>
+            </column>
+            <column name="safety_question_3_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestion_users_safety_questions_3" referencedTableName="tb_safety_questions" referencedColumnNames="autoid"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

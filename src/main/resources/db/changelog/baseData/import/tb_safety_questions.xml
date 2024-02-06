@@ -4,13 +4,13 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="import base admin api accounts" runOnChange="true" author="fas">
-        <loadUpdateData tableName="tb_api_users"
-                  primaryKey="username"
+    <changeSet id="import base data for tb_safety_questions" runOnChange="true" author="fas">
+        <loadUpdateData tableName="tb_safety_questions"
+                  primaryKey="system_id"
                   separator=","
-                  file="db/changelog/baseData/import/tb_api_users.csv">
-            <column name="username" type="STRING"/>
-            <column name="password" type="STRING"/>
+                  file="db/changelog/baseData/import/tb_safety_questions.csv">
+            <column name="system_id" type="STRING"/>
+            <column name="text" type="STRING"/>
         </loadUpdateData>
     </changeSet>
 

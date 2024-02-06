@@ -5,5 +5,7 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <include file="/db/changelog/baseData/tb_api_users.xml"/>
+    <include file="/db/changelog/baseData/tb_safety_questions.xml"/>
+    <include file="/db/changelog/baseData/tb_suggestion_users.xml"/>
 
 </databaseChangeLog>
