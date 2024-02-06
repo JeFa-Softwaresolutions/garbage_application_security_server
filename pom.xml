@@ -8,6 +8,7 @@
         <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+         
     <groupId>de.jefa</groupId>
     <artifactId>garbage_application_security_server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
