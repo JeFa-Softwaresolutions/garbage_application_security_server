@@ -16,11 +16,16 @@ public class ApiUsersService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public void saveUser(String userName, String password) {
+    public boolean saveUser(String userName, String password) {
         final TbApiUsers user = new TbApiUsers();
         user.setUsername(userName);
         user.setPassword(passwordEncoder.encode(password));
-        apiUsersRepository.save(user);
+        try {
+            apiUsersRepository.save(user);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public TbApiUsers getUserByUsername(String username) {

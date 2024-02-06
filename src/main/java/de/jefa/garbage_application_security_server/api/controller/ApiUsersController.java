@@ -17,8 +17,11 @@ public class ApiUsersController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestParam String userName, @RequestParam String password) {
-        apiUsersService.saveUser(userName, password);
-        return ResponseEntity.ok("User created successfully");
+        if(apiUsersService.saveUser(userName, password)) {
+            return ResponseEntity.ok("User created successfully");
+        } else {
+            return ResponseEntity.ok("User could not be created");
+        }
     }
 
     @GetMapping("/{username}")
