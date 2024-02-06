@@ -21,5 +21,9 @@ RUN ./mvnw clean package -DskipTests
 
 # Run stage
 FROM openjdk:17-jdk-slim
+
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
