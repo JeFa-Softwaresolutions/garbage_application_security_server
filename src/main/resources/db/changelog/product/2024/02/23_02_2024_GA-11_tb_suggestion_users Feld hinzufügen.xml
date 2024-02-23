@@ -4,6 +4,10 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include file="/db/changelog/product/2024/02/23_02_2024_GA-11_tb_suggestion_users Feld hinzufügen.xml"/>
-
+    <changeSet id="add is_admin_flag to tb_suggestion_users" author="fas">
+        <addColumn tableName="tb_suggestion_users">
+            <column name="is_admin_flag" type="BOOLEAN" defaultValue="false"/>
+        </addColumn>
+    </changeSet>
+    
 </databaseChangeLog>

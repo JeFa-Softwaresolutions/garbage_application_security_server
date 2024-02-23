@@ -8,38 +8,51 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_suggestion_users", schema = "public", catalog = "db_garbage_test")
 public class TbSuggestionUsers {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "autoid", nullable = false)
     @JsonIgnore
     private long autoid;
+
     @Basic
     @Column(name = "username", nullable = false, length = 32)
     private String username;
+
     @Basic
     @Column(name = "password", nullable = false, length = 64)
     private String password;
+
     @Basic
     @Column(name = "safety_answer_1", nullable = false, length = 32)
     private String safetyAnswer1;
+
     @Basic
     @Column(name = "safety_answer_2", nullable = false, length = 32)
     private String safetyAnswer2;
+
     @Basic
     @Column(name = "safety_answer_3", nullable = false, length = 32)
     private String safetyAnswer3;
+
     @Basic
-    @Column(name = "safety_question_1_ref", nullable = true)
+    @Column(name = "safety_question_1_ref")
     @JsonIgnore
     private Long safetyQuestion1Ref;
+
     @Basic
-    @Column(name = "safety_question_2_ref", nullable = true)
+    @Column(name = "safety_question_2_ref")
     @JsonIgnore
     private Long safetyQuestion2Ref;
+
     @Basic
-    @Column(name = "safety_question_3_ref", nullable = true)
+    @Column(name = "safety_question_3_ref")
     @JsonIgnore
     private Long safetyQuestion3Ref;
+
+    @Basic
+    @Column(name = "is_admin_flag")
+    private boolean isAdminFlag;
 
     public long getAutoid() {
         return autoid;
@@ -111,6 +124,14 @@ public class TbSuggestionUsers {
 
     public void setSafetyQuestion3Ref(Long safetyQuestion3Ref) {
         this.safetyQuestion3Ref = safetyQuestion3Ref;
+    }
+
+    public boolean isAdminFlag() {
+        return isAdminFlag;
+    }
+
+    public void setAdminFlag(boolean adminFlag) {
+        isAdminFlag = adminFlag;
     }
 
     @Override
